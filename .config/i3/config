@@ -135,7 +135,6 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-gaps inner 10
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -174,6 +173,7 @@ bindsym $mod+r mode "resize"
 # list open windows to switch to
 bindsym $mod+Tab exec rofi -show window
 
+exec --no-startup-id autorandr --change
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-scale /home/jzheadley/Pictures/backgrounds/orange_mountain.png
 
@@ -205,3 +205,5 @@ exec --no-startup-id i3-msg 'workspace $ws2; exec /usr/bin/chromium'
 exec --no-startup-id i3-msg 'workspace $ws4; exec /usr/bin/slack'
 exec --no-startup-id i3-msg 'workspace $ws4; exec /usr/bin/telegram-desktop'
 
+default_border pixel 2
+gaps inner 10
